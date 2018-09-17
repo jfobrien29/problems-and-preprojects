@@ -1,5 +1,3 @@
-
-
 // Given a string can delete at most k, return whether you can make a palindrome
 
 // Similar to "edit distance" problem, execpt don't know center.
@@ -50,4 +48,4 @@ console.log(canMakePalindrome('waterrfetawx', 1)); // false
 console.log(canMakePalindrome('abbac', 0)); // false
 console.log(canMakePalindrome('abbac', 1)); // true
 console.log(canMakePalindrome('abbac', 2)); // true
-console.log(canMakePalindrome('12abba', 2)); // true
+console.log(canMakePalindrome('12abba5', 2)); // true
