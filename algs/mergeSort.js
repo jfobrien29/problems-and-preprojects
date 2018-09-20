@@ -1,9 +1,10 @@
 // Javascript MergeSort Implementation
+//
 // arr.slice(start, end) creates a new array from start to end exclusive!
 // arr.concat returns new created array
 
 // Split the array into halves and merge them recursively
-function mergeSort(arr) {
+function mergeSort(arr, compareFunction) {
 
     // BASE CASE
     // Will break all arrays down to size of 1 before merging
@@ -16,13 +17,14 @@ function mergeSort(arr) {
     const right = arr.slice(middle);            // items on the right side
 
     return merge(
-        mergeSort(left),
-        mergeSort(right)
+        mergeSort(left, compareFunction),
+        mergeSort(right, compareFunction),
+        compareFunction
     );
 }
 
 // compare the arrays item by item and return the concatenated result
-function merge(left, right) {
+function merge(left, right, compareFunction) {
     let result = [];
     let indexLeft = 0;
     let indexRight = 0;
@@ -31,19 +33,28 @@ function merge(left, right) {
     // This while loop is the meat of the implementation
     // Assure both indexes are in range
     while (indexLeft < left.length && indexRight < right.length) {
-        if (left[indexLeft] < right[indexRight]) {
+
+        if (compareFunction(left[indexLeft], right[indexRight])) {
             result.push(left[indexLeft]);
             indexLeft++;
-        } else {
+        }
+        else {
             result.push(right[indexRight]);
             indexRight++;
         }
     }
 
-    // This is a sneaky hack, basically take what's left of arrays (only 1 will be full)
-    // And append to result
+    // This is a sneaky hack, basically take what's left of one of arrays (only 1 will be full)
+    // And append to result basically result + remainder left + remainder right
     return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 }
 
+function compareFunction(a, b) {
+    if (a > b) {
+        return true;
+    }
+    else return false
+}
+
 const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3, 12, 4];
-console.log(mergeSort(list)) // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
+console.log(mergeSort(list, compareFunction)) // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
