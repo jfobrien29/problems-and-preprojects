@@ -4,7 +4,7 @@
 // arr.concat returns new created array
 
 // Split the array into halves and merge them recursively
-function mergeSort(arr, compareFunction) {
+function mergeSort(arr) {
 
     // BASE CASE
     // Will break all arrays down to size of 1 before merging
@@ -17,14 +17,13 @@ function mergeSort(arr, compareFunction) {
     const right = arr.slice(middle);            // items on the right side
 
     return merge(
-        mergeSort(left, compareFunction),
-        mergeSort(right, compareFunction),
-        compareFunction
+        mergeSort(left),
+        mergeSort(right),
     );
 }
 
 // compare the arrays item by item and return the concatenated result
-function merge(left, right, compareFunction) {
+function merge(left, right) {
     let result = [];
     let indexLeft = 0;
     let indexRight = 0;
@@ -34,7 +33,7 @@ function merge(left, right, compareFunction) {
     // Assure both indexes are in range
     while (indexLeft < left.length && indexRight < right.length) {
 
-        if (compareFunction(left[indexLeft], right[indexRight])) {
+        if (left[indexLeft] > right[indexRight]) {
             result.push(left[indexLeft]);
             indexLeft++;
         }
