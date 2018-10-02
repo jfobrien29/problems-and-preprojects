@@ -27,7 +27,7 @@ def createShirtLines(names, maxLength):
 
 
 
-MAX_LINE_LENGTH = 90
+MAX_LINE_LENGTH = 85
 names = readInNames()
 shirtLines = createShirtLines(names, MAX_LINE_LENGTH)
 
