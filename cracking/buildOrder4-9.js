@@ -9,7 +9,6 @@
         - remove from queue
 */
 
-
 class Node {
     constructor(project) {
         this.project = project;
