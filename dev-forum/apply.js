@@ -22,6 +22,8 @@ console.log('\n****** Functions with call() ******');
 console.log('Area of circle:   ', mathLib.circleArea.call({pi: 3.1415926}, radius));
 console.log('Area of cylinder: ', mathLib.cylinderArea.call({pi: 3.1415926}, radius, height));
 
-// console.log('\n****** Functions with apply() ******');
-// console.log('Area of circle:   ', mathLib.circleArea.apply({pi: 3.1415926}, [2]));
-// console.log('Area of cylinder: ', mathLib.cylinderArea.apply({pi: 3.1415926}, [2, 5]));
+console.log('\n****** Functions with apply() ******');
+console.log('Area of circle:   ', mathLib.circleArea.apply({pi: 3.1415926}, [2]));
+console.log('Area of cylinder: ', mathLib.cylinderArea.apply({pi: 3.1415926}, [2, 5]));
+console.log('Area of cylinder: ', mathLib.cylinderArea.call({pi: 3.1415926}, ...[2, 5]));
+

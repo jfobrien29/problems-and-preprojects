@@ -33,7 +33,7 @@ function merge(left, right) {
     // Assure both indexes are in range
     while (indexLeft < left.length && indexRight < right.length) {
 
-        if (left[indexLeft] > right[indexRight]) {
+        if (left[indexLeft] < right[indexRight]) {
             result.push(left[indexLeft]);
             indexLeft++;
         }
@@ -56,4 +56,4 @@ function compareFunction(a, b) {
 }
 
 const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3, 12, 4];
-console.log(mergeSort(list, compareFunction)) // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
+console.log(mergeSort(list)) // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
