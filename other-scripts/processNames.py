@@ -16,7 +16,7 @@ def createShirtLines(names, maxLength):
     for name in names:
         if len(currentLine) is 0:
             currentLine = name
-        elif len(currentLine) + len(name) + 3 < maxLength:
+        elif len(currentLine) + len(name) + 3 <= maxLength:
             currentLine = currentLine + ' - ' + name
         else:
             shirtLines.append(currentLine)
@@ -27,7 +27,7 @@ def createShirtLines(names, maxLength):
 
 
 
-MAX_LINE_LENGTH = 85
+MAX_LINE_LENGTH = 100
 names = readInNames()
 shirtLines = createShirtLines(names, MAX_LINE_LENGTH)
 
