@@ -1,0 +1,44 @@
+{
+    "info" : {
+        "name" : "Mid Winter Kitchen",
+        "date" : "10/19/2018"
+    },
+    "totals": {
+        "subtotal" : 157.00,
+        "tax" : 13.93,
+        "tip" : 31.40,
+        "total" : 202.33
+    },
+    "items" : [
+        {
+            "name" : "Other Half IPA Pint",
+            "price" : 9.00,
+            "quantity" : 2
+        },
+        {
+            "name" : "GrapefruitMimosa",
+            "price" : 11.00,
+            "quantity" : 1
+        },
+        {
+            "name" : "BiscuitSide",
+            "price" : 6.00,
+            "quantity" : 1
+        },
+        {
+            "name" : "ChorizoSkillet",
+            "price" : 18.00,
+            "quantity" : 5
+        },
+        {
+            "name" : "Sauteed Greens",
+            "price" : 6.00,
+            "quantity" : 2
+        },
+        {
+            "name" : "SteakHash",
+            "price" : 20.00,
+            "quantity" : 2
+        }
+    ]
+}
